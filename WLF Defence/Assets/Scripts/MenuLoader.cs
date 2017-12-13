@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class MenuLoader : MonoBehaviour {
 
-    public void Play()
+    public void LoadLevel(string levelName)
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(levelName);
+        //SceneManager.LoadScene("Level1-1");
     }
 
     public void Training()

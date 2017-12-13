@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd2ef6b8bb4522478f2463386597dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 250
+  Damage: 235
   Force: 350
   KnockForce: 400
 --- !u!212 &212981702084641176
