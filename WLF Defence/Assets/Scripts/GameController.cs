@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     public Text WinLoseText;
     public Text RemainingText;
 
+    public bool GoBackToMenuAfterCompletion = false;
+
 
     private float _timeBefore;
     private bool _endBegan;
@@ -86,8 +88,16 @@ public class GameController : MonoBehaviour
     {
 
         WinLoseText.text = "You Win!";
-        yield return new WaitForSeconds(10);
-        SceneManager.LoadScene("MainMenu");
+        yield return new WaitForSeconds(6);
+        if (GoBackToMenuAfterCompletion)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
     }
 
     public void Quit()
