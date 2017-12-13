@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
     private bool _facingRight;
     private bool _grounded;
     private float _groundRadius = 0.15f;
+    private float _nextJump;
+
     private float _nextFire;
     private float _nextAttack;
     private float _nextAerialAttack;
@@ -131,8 +133,10 @@ public class PlayerController : MonoBehaviour
 #endif
         if (_grounded && jumpPressed)                                               //INPUT DANGER
         {
+            if (!(Time.time > _nextJump)) return;
             _animator.SetBool("Grounded", false);
             _rb.AddForce(new Vector2(0, JumpForce));
+            _nextJump = Time.time + 0.1f;
         }
     }
 
